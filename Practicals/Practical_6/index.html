@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <div>
+            <h1>Practical No. 6</h1>
+            <h3><u>Marks Calculation</u></h3>
+            <table border="5" cellspaceing="3" cellpadding="3">
+                <tr>
+                    <th>#</th>
+                    <th>Subjects</th>
+                    <th>Marks</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>DMGT</td>
+                    <td><input type="number" id="s1" placeholder="Enter marks"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>CAO</td>
+                    <td><input type="number" id="s2" placeholder="Enter marks"></td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>ED</td>
+                    <td><input type="number" id="s3" placeholder="Enter marks"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>ES</td>
+                    <td><input type="number" id="s4" placeholder="Enter marks"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>DSA</td>
+                    <td><input type="number" id="s5" placeholder="Enter marks"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"><button type="button" class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none" onclick="calc()">Calculate</button></td>
+                </tr>
+            </table>
+            <h3>Total Marks</h3>
+            <h3 id="totalmarks"></h3>
+            <hr>
+            <br>
+            <h3>Percentage</h3>
+            <h3 id="Percentage"></h3>
+            <hr>
+            <H3>Grade</H3>
+            <h3 id="grade"></h3>
+          
+        </div>
+        <script>
+                function calc(){
+                    let sub1=Number(document.getElementById("s1").value);
+                    let sub2=Number(document.getElementById("s2").value);
+                    let sub3=Number(document.getElementById("s3").value);
+                    let sub4=Number(document.getElementById("s4").value);
+                    let sub5=Number(document.getElementById("s5").value);
+                    alert(sub1);
+
+                    let grade = null;
+                    let total = sub1 + sub2 + sub3 + sub4 + sub5;
+                    let per = (total/500)*100;
+
+                if(total >= 85){
+                        grade = "A";
+                } else if(total >= 65 && total<=84){
+                    grade = "B";
+                }else if(total >= 65 && total <= 45){
+                    grade="C";
+                } else if(total < 45){
+                    grade="D";
+                }
+
+                    document.getElementById("totalmarks").textContent = total;
+                    document.getElementById("Percentage").textContent = per.toFixed(2) + "%";
+                    document.getElementById("grade").textContent = grade;
+                }
+
+         </script>
+</body>
+</html> 
